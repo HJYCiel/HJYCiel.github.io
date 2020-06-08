@@ -2,12 +2,12 @@
 # Theme Customization #
 #######################
 
-title: J. Bravo                             # used in <title> tag & site header
-author: Johnny Bravo                        # used in a <meta> tag & /feed.xml
+title: Jiaying                           # used in <title> tag & site header
+author: Jiaying                       # used in a <meta> tag & /feed.xml
 description: >                              # used in a <meta> tag & /feed.xml
   Hello 911 emergency, there's a handsome guy in my house!
   Oh wait a second, cancel that. It's only me.
-slogan: Showtime!                           # used in site header, beside title
+slogan: Projects                           # used in site header, beside title
 avatar: /i/avatar.png                       # used as portrait in site header
 banner: /i/mountains.svg                    # used as background in site header
 url: http://solana.ryanlue.com              # used by plugins to generate feed.xml and sitemap.xml
@@ -24,13 +24,13 @@ nav_menu:
     url: /projects
     icon: /i/icons.svg#portfolio
   - name: GitHub
-    url: https://github.com/rlue/
+    url: https://github.com/HJYCiel/
     icon: /i/icons.svg#github
     outbound: true      # this key sets a link to open in a new window.
   - name: Contact
     scheme: mailto      # these keys enable email obfuscation.
-    handle: hello       # you know, to protect you from bots. (handle and domain
-    domain: github.com  # are separated in case bots crawl GitHub repos, too.)
+    handle: hjy43802       # you know, to protect you from bots. (handle and domain
+    domain: hotmail.com  # are separated in case bots crawl GitHub repos, too.)
     icon: /i/icons.svg#email
 
 # Objects listed here will appear on the /projects.html page.
@@ -50,6 +50,11 @@ projects:
     url: https://play.google.com/store/music/artist/Rihanna?id=Arcw2m2ih45qntv3fufub25tyhu
     role: Contributor
     category: Algorithmic Composition
+  - title: MemberPress Forms Customization
+    teaser: More customizations to be updated
+    role: Creator
+    category: projects
+
 
 #################
 # Site Settings #
