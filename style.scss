@@ -297,8 +297,8 @@
 	display: block;
 	padding: 1.5rem;
 	height: 3rem;
-	@include fontface(sans-serif);
-	@include fontweight(bold, sans-serif, #fff);
+	@include fontface(serif);
+	@include fontweight(bold, serif, #fff);
 	font-size: 2.5rem;
 	line-height: 3rem;
 	@include bgicon($image: url('/i/icons.svg#close_white'), $position: top 2.125rem right 2.375rem, $size: null, $color: salmon);
@@ -451,7 +451,7 @@
     background-color: #fff;
     border: 1px solid #4e3107;
     border-right-width: 1.5rem;
-    @include fontface(sans-serif);
+    @include fontface(serif);
     color: #444;
     text-align: right;
   }
