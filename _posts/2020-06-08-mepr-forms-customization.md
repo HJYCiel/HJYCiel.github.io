@@ -67,7 +67,7 @@ add_action('mepr-forgot-password-form', 'display_recaptcha_mepr_password_reset')
 
 Now you should see the reCaptcha show up on your form:
 
-![password reset form](/_assets/images/password-reset.png)
+![password reset form](https://user-images.githubusercontent.com/41762593/84104965-eb16d080-a9e4-11ea-889a-a59bb7521e97.png)
 
 #### Method 2: Add enable/disable reCaptcha functionalities for customized forms in the plugin setting
 
@@ -94,7 +94,7 @@ add_filter( 'gglcptch_add_custom_form', 'add_custom_recaptcha_forms' );
 
 After adding the code above, we should see the form show up in the plugin setting page under general tap:
 
-![reCaptcha forms](/assets/images/reCaptcha-forms.png)
+![reCaptcha forms](https://user-images.githubusercontent.com/41762593/84105012-0d105300-a9e5-11ea-85f0-22669d9e416f.png)
 
 Now you can enable/disable the reCaptcha for the form from the plugin setting.
 
