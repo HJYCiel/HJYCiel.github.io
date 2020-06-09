@@ -75,7 +75,7 @@ pre { // code blocks
 }
 
 blockquote {
-  @include fontface(serif);
+  @include fontface(sans-serif);
   font-style: italic;
   font-size: 0.9375rem;
   border: 1px dotted $solarized_yellow;
