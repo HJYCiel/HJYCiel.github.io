@@ -16,7 +16,7 @@ To alter the settings of a plugin in WordPress, we need to write PHP scripts wit
 >Form name: *'mepr_process_signup_form'*
 
 | Hooks      | Description | usage |
-| :----:     |    :----:   | :----: |
+| :----    |    :----   | :---- |
 | mepr-checkout-after-email-field | after the email field in the default signup form | add custom field manually |
 | mepr-checkout-before-submit | before the submit button on signup form | add reCaptcha; add words/fields|
 | mepr-validate-signup     | user signup validation process| change error message |
@@ -27,7 +27,7 @@ To alter the settings of a plugin in WordPress, we need to write PHP scripts wit
 >Form name: *'mepr_loginform'*
 
 | Hooks      | Description | usage |
-| :----:     |    :----:   | :----: |
+| :----     |    :----   | :---- |
 | mepr-login-form-before-submit | before the submit button on the login form | add reCaptcha; add words/fields|
 | mepr-validate-login | user login validation process | change error message |
 | mepr-login-redirect-url | url redirect to after user login | change redirect location manually |
@@ -37,7 +37,7 @@ To alter the settings of a plugin in WordPress, we need to write PHP scripts wit
 >Form name: *'mepr_forgot_password_form'*
 
 | Hooks      | Description | usage |
-| :----:     |    :----:   | :----: |
+| :----    |    :----  | :---- |
 | mepr-forgot-password-form|before the submit button on the forgot password form | add reCaptcha; add words/fields|
 | mepr-validate-forgot-password | validation process of user information to request reset password | change error message |
 
@@ -48,12 +48,13 @@ More Hooks to come....
 
 ### Add reCaptcha to forms (with [BestWestSoft ReCaptcha](https://nl.wordpress.org/plugins/google-captcha/) plugin)
 
-There are two ways to add reCaptcha to MemberPress forms. The codes can be added by using any snippet plugin or can be added to *function.php* in child theme.
+There are two ways to add reCaptcha to MemberPress forms. The codes can be added by using any snippet plugin or can be added to *function.php* in child theme. 
 
-##### Method 1: use shortcode
+#### Method 1: use shortcode
 
 The following code is to embed the reCaptcha to *Forgot Password Form*:
 '''php
+<?php
 function display_recaptcha_mepr_password_reset() {
  ?>
 	<?php echo do_shortcode("[bws_google_captcha]"); ?>
@@ -65,17 +66,18 @@ add_action('mepr-forgot-password-form', 'display_recaptcha_mepr_password_reset')
 
 Now you should see the reCaptcha show up on your form:
 
-![password reset form](/_assets/images/password-reset.png)
+![password reset form](/assets/images/password-reset.png)
 
-##### Method 2: Add enable/disable reCaptcha functionalities for customized forms in the plugin setting
+#### Method 2: Add enable/disable reCaptcha functionalities for customized forms in the plugin setting
 
 For this method, please use [this article](https://support.bestwebsoft.com/hc/en-us/articles/202352499-How-to-add-reCaptcha-plugin-to-a-custom-form-on-my-WordPress-website-) as reference. 
 
 Let's add reCaptcha to the MemberPress signup form.
 
-<ins>Step 1: </ins>
+<ins>**Step 1:** </ins><br>
 First, we need to add the connection between the form and the reCaptcha plugin
 '''php
+<?php
 function add_custom_recaptcha_forms( $forms ) {
 $forms['mepr_process_signup_form'] = array( "form_name" => "MemberPress General Sign Up Form" );
 
@@ -88,13 +90,14 @@ add_filter( 'gglcptch_add_custom_form', 'add_custom_recaptcha_forms' );
 -*'gglcptch_add_custom_form'*: the hook for BWS reCaptcha plugin to add custom forms to the *Setting* page.
 
 After adding the code above, we should see the form show up in the plugin setting page under general tap:
-![reCaptcha forms](/_assets/images/reCaptcha-forms.png)
+![reCaptcha forms](/assets/images/reCaptcha-forms.png)
 
 Now you can enable/disable the reCaptcha for the form from the plugin setting.
 
-<ins>Step 2: </ins>
+<ins>**Step 2:** </ins><br>
 Now Add the plugin to the signup form:
 '''php
+<?php
 function display_recaptcha_mepr_signup() {
  ?>
 	<?php echo apply_filters( 'gglcptch_display_recaptcha', '', 'mepr_process_signup_form' ); ?>	
@@ -107,9 +110,10 @@ add_action('mepr-checkout-before-submit', 'display_recaptcha_mepr_signup');
 -*'mepr-checkout-before-submit'*: the hook in the signup form indicating the space before the submit button.
 -*'gglcptch_display_recaptcha'*: hook in the reCaptcha plugin to show the reCaptcha in the corresponding form.
 
-<ins>Step 3: </ins>
+<ins>**Step 3:** </ins><br>
 We also need to add the validation process to make the reCaptcha effective:
 '''php
+<?php
 function validate_recaptcha_mepr_signup($errors) {
   $is_valid = apply_filters('gglcptch_verify_recaptcha', true,'mepr_process_signup_form');
   if(!$is_valid) {
@@ -129,6 +133,7 @@ After adding the reCaptcha, we need to create the correct error message in case 
 
 Here is the code to add error message for the *Forgot Password Form*
 '''php
+<?php
 function validate_recaptcha_mepr_password_reset($errors) {
 	$is_valid = apply_filters('gglcptch_verify_recaptcha', true, 'string', 'mepr-forgot-password-form');
   if(!$is_valid) {
