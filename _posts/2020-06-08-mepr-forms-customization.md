@@ -67,7 +67,7 @@ add_action('mepr-forgot-password-form', 'display_recaptcha_mepr_password_reset')
 
 Now you should see the reCaptcha show up on your form:
 
-![password reset form](HJYCiel.github.io/_assets/images/password-reset.png)
+![password reset form](/_assets/images/password-reset.png)
 
 #### Method 2: Add enable/disable reCaptcha functionalities for customized forms in the plugin setting
 
