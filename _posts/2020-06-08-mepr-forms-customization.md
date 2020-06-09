@@ -67,7 +67,7 @@ add_action('mepr-forgot-password-form', 'display_recaptcha_mepr_password_reset')
 
 Now you should see the reCaptcha show up on your form:
 
-![password reset form](_assets/images/password-reset.png)
+![password reset form](HJYCiel.github.io/_assets/images/password-reset.png)
 
 #### Method 2: Add enable/disable reCaptcha functionalities for customized forms in the plugin setting
 
@@ -93,6 +93,7 @@ add_filter( 'gglcptch_add_custom_form', 'add_custom_recaptcha_forms' );
 -*'gglcptch_add_custom_form'*: the hook for BWS reCaptcha plugin to add custom forms to the *Setting* page.
 
 After adding the code above, we should see the form show up in the plugin setting page under general tap:
+
 ![reCaptcha forms](/assets/images/reCaptcha-forms.png)
 
 Now you can enable/disable the reCaptcha for the form from the plugin setting.
