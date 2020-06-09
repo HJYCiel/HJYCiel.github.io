@@ -67,7 +67,7 @@ add_action('mepr-forgot-password-form', 'display_recaptcha_mepr_password_reset')
 
 Now you should see the reCaptcha show up on your form:
 
-![password reset form](https://user-images.githubusercontent.com/41762593/84104965-eb16d080-a9e4-11ea-889a-a59bb7521e97.png)
+<img src="https://user-images.githubusercontent.com/41762593/84104965-eb16d080-a9e4-11ea-889a-a59bb7521e97.png">
 
 #### Method 2: Add enable/disable reCaptcha functionalities for customized forms in the plugin setting
 
@@ -88,13 +88,13 @@ return $forms;
 add_filter( 'gglcptch_add_custom_form', 'add_custom_recaptcha_forms' );
 ```
 
--*'mepr_process_signup_form'*: the form name of the signup form in MemberPress. Feel free to change it to the name of the form you would like to add.
--*"MemberPress General Sign Up Form"*: the form name going to display in the reCaptcha setting, please see the image below.
--*'gglcptch_add_custom_form'*: the hook for BWS reCaptcha plugin to add custom forms to the *Setting* page.
+-*'mepr_process_signup_form'*: the form name of the signup form in MemberPress. Feel free to change it to the name of the form you would like to add.<br>
+-*"MemberPress General Sign Up Form"*: the form name going to display in the reCaptcha setting, please see the image below.<br>
+-*'gglcptch_add_custom_form'*: the hook for BWS reCaptcha plugin to add custom forms to the *Setting* page.<br>
 
 After adding the code above, we should see the form show up in the plugin setting page under general tap:
 
-![reCaptcha forms](https://user-images.githubusercontent.com/41762593/84105012-0d105300-a9e5-11ea-85f0-22669d9e416f.png)
+<img src="https://user-images.githubusercontent.com/41762593/84105012-0d105300-a9e5-11ea-85f0-22669d9e416f.png">
 
 Now you can enable/disable the reCaptcha for the form from the plugin setting.
 
@@ -111,9 +111,9 @@ function display_recaptcha_mepr_signup() {
 add_action('mepr-checkout-before-submit', 'display_recaptcha_mepr_signup');
 ```
 
--*'mepr_process_signup_form'*: Make sure the form name is the same as *Step 1*.
--*'mepr-checkout-before-submit'*: the hook in the signup form indicating the space before the submit button.
--*'gglcptch_display_recaptcha'*: hook in the reCaptcha plugin to show the reCaptcha in the corresponding form.
+-*'mepr_process_signup_form'*: Make sure the form name is the same as *Step 1*.<br>
+-*'mepr-checkout-before-submit'*: the hook in the signup form indicating the space before the submit button.<br>
+-*'gglcptch_display_recaptcha'*: hook in the reCaptcha plugin to show the reCaptcha in the corresponding form.<br>
 
 <ins>**Step 3:** </ins><br>
 We also need to add the validation process to make the reCaptcha effective:
@@ -130,8 +130,8 @@ function validate_recaptcha_mepr_signup($errors) {
 add_filter('mepr-validate-signup', 'validate_recaptcha_mepr_signup');
 ```
 
--*'gglcptch_verify_recaptcha'*: the hook in the reCaptcha plugin to return the response from the user.
--*'mepr-validate-signup'*: the hook of the validation process for the MemberPress Signup Form.
+-*'gglcptch_verify_recaptcha'*: the hook in the reCaptcha plugin to return the response from the user.<br>
+-*'mepr-validate-signup'*: the hook of the validation process for the MemberPress Signup Form.<br>
 
 #### Add Error Messages for reCaptcha
 
@@ -150,8 +150,8 @@ function validate_recaptcha_mepr_password_reset($errors) {
 add_filter('mepr-validate-forgot-password', 'validate_recaptcha_mepr_password_reset');
 
 ```
--*'gglcptch_verify_recaptcha'*: the hook in the reCaptcha plugin to return the response from the user.
--*'mepr-validate-forgot-password'*: the validation process of the MemberPress Forgot Password Form.
+-*'gglcptch_verify_recaptcha'*: the hook in the reCaptcha plugin to return the response from the user.<br>
+-*'mepr-validate-forgot-password'*: the validation process of the MemberPress Forgot Password Form.<br>
 
 The error messages can be changed in<code>$errors[] =""</code>
 
