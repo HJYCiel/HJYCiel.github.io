@@ -63,11 +63,11 @@ function display_recaptcha_mepr_password_reset() {
 add_action('mepr-forgot-password-form', 'display_recaptcha_mepr_password_reset');
 ```
 
--*'mepr-forgot-password-form'* is the hook to allow developers to add content before the submit button. Feel free to change to hook, which is indicating the space before the submit button, from other forms to embed the reCaptcha to the forms.
+-*<span style="color:#40867e;">'mepr-forgot-password-form'*</span> is the hook to allow developers to add content before the submit button. Feel free to change to hook, which is indicating the space before the submit button, from other forms to embed the reCaptcha to the forms.
 
 Now you should see the reCaptcha show up on your form:
 
-<img src="https://user-images.githubusercontent.com/41762593/84104965-eb16d080-a9e4-11ea-889a-a59bb7521e97.png">
+<img src="https://user-images.githubusercontent.com/41762593/84104965-eb16d080-a9e4-11ea-889a-a59bb7521e97.png" width="40%">
 
 #### Method 2: Add enable/disable reCaptcha functionalities for customized forms in the plugin setting
 
@@ -94,7 +94,7 @@ add_filter( 'gglcptch_add_custom_form', 'add_custom_recaptcha_forms' );
 
 After adding the code above, we should see the form show up in the plugin setting page under general tap:
 
-<img src="https://user-images.githubusercontent.com/41762593/84105012-0d105300-a9e5-11ea-85f0-22669d9e416f.png">
+<img src="https://user-images.githubusercontent.com/41762593/84105012-0d105300-a9e5-11ea-85f0-22669d9e416f.png" width="40%" >
 
 Now you can enable/disable the reCaptcha for the form from the plugin setting.
 
