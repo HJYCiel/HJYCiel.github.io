@@ -29,6 +29,9 @@
     {% feed_meta %}
     <link rel="stylesheet"    href="{{ site.baseurl }}/style.css">
     <link rel="stylesheet"    href="https://fonts.googleapis.com/css?family=Alegreya|Roboto:500,500i,300,300i|Roboto+Mono">
+    {% if jekyll.environment == 'production' %}
+      {% include analytics.html %}
+    {% endif %}
   </head>
   <body>
     <div class="backdrop backdrop--{{ page_type }}">
